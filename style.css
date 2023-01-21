@@ -1,0 +1,110 @@
+#murdeni_keyword_search input[type="submit"] {
+    width: 48px;
+    height: 48px !important;
+    background: #444 url(icon-search.svg) center/24px no-repeat !important;
+    margin-bottom: 0;
+    font-size: 0 !important;
+    padding: 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 1px #0b253e !important;
+    -moz-box-shadow: 0px 0px 0px 1px #0b253e !important;
+    box-shadow: 0px 0px 0px 1px #0b253e !important;
+    border: none !important;
+}
+
+#murdeni_keyword_search .search-wrapper {
+    display: flex;
+}
+
+
+form.loading input[type="search"] {
+    background: url(loading.gif) center right 16px/15px no-repeat !important;
+}
+
+form.loading input[type="search"]::-webkit-search-decoration,
+form.loading input[type="search"]::-webkit-search-cancel-button,
+form.loading input[type="search"]::-webkit-search-results-button,
+form.loading input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+#murdeni_keyword_search .product-group--filter {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+#murdeni_keyword_search input[type="search"] {
+    margin: 0;
+    line-height: 1;
+    padding: 0 10px;
+    height: 48px;
+    -webkit-box-shadow: 0px 0px 0px 1px #fff;
+    -moz-box-shadow: 0px 0px 0px 1px #fff;
+    box-shadow: 0px 0px 0px 1px #2c3338;
+    border: none;
+}
+
+#murdeni_keyword_search input[type="search"]:focus {
+    -webkit-box-shadow: 0px 0px 0px 1px rgb(8 57 130 / 95%);
+    -moz-box-shadow: 0px 0px 0px 1px rgb(8 57 130 / 95%);
+    box-shadow: 0px 0px 0px 1px rgb(8 57 130 / 95%);
+}
+
+
+ul.murdeni-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #f0f0f1;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    display: none;
+    padding: 10px 0;
+}
+
+ul.murdeni-autocomplete.active {
+    display: block;
+}
+
+.text-search {
+    position: relative;
+}
+
+ul.murdeni-autocomplete.active li>a {
+    padding: 0 10px;
+    display: flex;
+    font-size: 16px;
+    text-transform: uppercase;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #313131;
+    margin-bottom: 5px;
+}
+
+ul.murdeni-autocomplete.active li {
+    background: #eee;
+}
+
+ul.murdeni-autocomplete .title span {
+    font-weight: bold;
+}
+
+.murdeni-autocomplete .type {
+    color: #fff;
+    background: rgb(255 105 0);
+    padding: 0 5px;
+}
