@@ -51,8 +51,7 @@ class Murdeni_SearchAutoComplete{
 			<form id="murdeni_keyword_search">
 				<div class="search-wrapper">
 					<?php $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : ''; ?>
-					<input type="search" name="q" placeholder="<?php echo __('Cari Post, Produk, dan Halaman', 'murdeni') ?>" value="<?php echo $keyword ?>" autocomplete="off">
-					<input type="submit" value="Cari">
+					<input type="search" name="q" placeholder="<?php echo __('Cari Post, Produk, dan Halaman', 'murdeni') ?>" value="<?php echo $keyword ?>" autocomplete="off">					
 				</div>
 			</form>				
 		</div>
@@ -73,17 +72,22 @@ class Murdeni_SearchAutoComplete{
 		);
 		
 		$posts = get_posts($args);		
-		if (!empty($posts)) {
-			$html = '<ul class="murdeni-autocomplete active">';
+        $html = '<ul class="murdeni-autocomplete active">';
+		if (!empty($posts)) {			
 			foreach ($posts as $key => $post) {
 				$pattern = "/".$search_term."/i";
 				$title = preg_replace($pattern, '<strong style="text-decoration: underline;">'.$search_term.'</strong>', $post->post_title);
 				$html .= '<li><a href="'.get_the_permalink($post->ID).'"><span class="title">'.$title.'</span><span class="type">'.$post->post_type.'</span></a></li>';
 			}
-			$html .= '</ul>';
-		}
+			
+		} else {
+            $html .= '<li>Maaf, tidak ada hasil ditemukan.</li>';
+        }
+
+        $html .= '</ul>';
 
 		echo $html;
+
 		wp_reset_postdata();
 
 		die();
@@ -91,4 +95,9 @@ class Murdeni_SearchAutoComplete{
 
 }
 
-new Murdeni_SearchAutoComplete;
+function run_search_autocomplete(){
+    new Murdeni_SearchAutoComplete();
+}
+
+// Jalankan
+run_search_autocomplete();

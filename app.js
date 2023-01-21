@@ -3,24 +3,14 @@
     $(document).ready(function(){   
         // search filter
 		let input = $(document).find('#murdeni_keyword_search [name="q"]');
-
-		$(document).on("submit", "#murdeni_keyword_search", function (e) {
-      e.preventDefault();
-      let keyword = $(this).find('[name="q"]').val();
-      if (keyword !== "") {
-        $("#murdeni_keyword_search")
-          .find('[name="keyword"]')
-          .val(keyword)
-          .trigger("change");
-      }
-    });
+		
 
 		$(document).on("keyup", '#murdeni_keyword_search [name="q"]', function () {
-      let value = $(this).val();
-      if (value.length > 2) {
-        setTimeout(get_suggestion, 200, value, input);
-      }
-    });
+				let value = $(this).val();
+				if (value.length > 2) {
+					setTimeout(get_suggestion, 200, value, input);
+				}
+		});
 
 		function get_suggestion(request, input){
 			console.log(request);
